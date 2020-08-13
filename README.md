@@ -27,7 +27,7 @@ Introduction
 Methodological approach
 ----------
 
-[1. R packages](./R_packages/rpackages.Rmd)
-[2. Methodological approach](./Methods/Methods.Rmd)
-[3. Pathogens](./Variables/README.md)
+[1. R packages](./R_packages/rpackages.Rmd)  
+[2. Methodological approach](./Methods/Methods.Rmd)  
+[3. Pathogens](./Variables/README.md)  
 
