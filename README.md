@@ -4,9 +4,9 @@
 
 ### Table of Contents
 
-1. [Introduction](#introduction)
+#### 1. Introduction
 
-2. Methodological approach
+#### 2. Methodological approach
 ----------  
     -   [R packages](./R_packages/rpackages.Rmd)    
     -   [Statistical analysis](#statistical-analysis)    
