@@ -4,11 +4,11 @@
 
 ### Table of Contents
 
-1. [Introduction](#introduction)
+1.   [Introduction](#introduction)
 
-2. [Methodological approach](#methodological-approach)
-        - [R packages](#r-packages)  
-        - [Statistical analysis](#statistical-analysis)    
+2.   [Methodological approach](#methodological-approach)
+-    [R packages](#r-packages)  
+-    [Statistical analysis](#statistical-analysis)    
 
 3. [Diseases and their pathogens](#diseases-and-their-pathogens)  
         - [*Leptospira* sp.](#leptospira-sp.)  
