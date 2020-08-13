@@ -8,13 +8,6 @@ Table of Contents
 ---------- 
 -   [Introduction](#introduction)
 -   [An ENM for wild boar: why bother?](#An-ENM-for-wild-boar-why-bother)    
--   [Methodological approach](#methodological-approach)
-    -   [R packages](#r-packages)             
-    -   [Occurrence data processing](#occurrence-data-processing)   
-    -   [Environmental data processing](#environmental-data-processing)     
-    -   [Model calibration](#model-calibration)      
-    -   [Model validation](#model-validation)
-    -   [Plots](#plots)
 
 Introduction
 ----------  
