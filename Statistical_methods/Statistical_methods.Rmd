@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-> In this work data were analyzed the spatial distribution of wild boar positive to a variety of pathogens.   
-=======
-Introduction
-----------
-> In this work data were analyzed the spatial distribution of wild boar positive to a variety of pathogens.   
->>>>>>> 688264d64e033e685cf7133b5eec3ca84a9f8d53
