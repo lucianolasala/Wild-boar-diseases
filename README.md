@@ -10,7 +10,7 @@
 
 2. Methodological approach
     -   [R packages](./R_packages/rpackages.Rmd)    
-    -   [Statistical methods](#statistical-analysis)    
+    -   [Statistical methods](./Statistical methods/Statistical methods.Rmd)    
 
 3. Diseases and their pathogens  
     -   [*Leptospira* sp.](#leptospira-sp.)  
