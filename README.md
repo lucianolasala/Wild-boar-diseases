@@ -12,7 +12,8 @@
 
 3.   [Pathogens](#pathogens)  
     -   [*Leptospira* sp.](#Leptospira-sp.)  
-    -   [Aujeszky's Disease Virus](#Aujeszky's-Disease-Virus)
+    -   [Aujeszky's Disease Virus](#Aujeszky's-Disease-Virus)  
+    -   [Hepatitis E Virus](#hepatitis-e-virus)
 
 
 Introduction
