@@ -8,7 +8,7 @@
 > Here, we analyze the distribution of wild boar (*Sus scrofa*) pathogens in southwest Buenos Aires province, Argentina. 
 
 2. Methodological approach
-    -   [R packages](./R-packages/R-packages.Rmd)    
+    -   [R packages](./R-packages/R-packages.md)    
     -   [Statistical methods](./Statistical_methods/Methods.md)    
     
 3. Diseases and their pathogens  
