@@ -6,7 +6,8 @@
 
 1. [Introduction](#introduction)
 
-2. [Methodological approach](#methodological-approach)  
+2. Methodological approach
+----------  
     -   [R packages](./R_packages/rpackages.Rmd)    
     -   [Statistical analysis](#statistical-analysis)    
 
