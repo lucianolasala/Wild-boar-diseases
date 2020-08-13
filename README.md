@@ -5,7 +5,6 @@
 ### Table of Contents
 
 1. Introduction
-***
 > Here, we analyze the distribution of wild boar (*Sus scrofa*) pathogens in southwest Buenos Aires province, Argentina. 
 
 2. Methodological approach
