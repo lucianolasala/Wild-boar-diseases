@@ -4,14 +4,13 @@
 
 ### Table of Contents
 
-#### 1. Introduction
+1. Introduction
 
-#### 2. Methodological approach
-----------  
+2. Methodological approach
     -   [R packages](./R_packages/rpackages.Rmd)    
     -   [Statistical analysis](#statistical-analysis)    
 
-3. [Diseases and their pathogens](#diseases-and-their-pathogens)  
+3. Diseases and their pathogens  
     -   [*Leptospira* sp.](#leptospira-sp.)  
     -   [Aujeszky's Disease Virus](#aujeszky's-disease-virus)  
     -   [Hepatitis E Virus](#hepatitis-e-virus)  
