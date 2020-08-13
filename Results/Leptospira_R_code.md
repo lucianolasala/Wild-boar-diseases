@@ -30,7 +30,7 @@
     
     AD
 
-#### Inset creation
+#### Map inset creation
     
     arginset <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm0.shp")
     poly <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Polygon/Polygon.shp") 
