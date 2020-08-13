@@ -4,6 +4,7 @@
 
 ### Table of Contents
 
+<<<<<<< HEAD
 1. [Introduction](#introduction)
 
 2. [Methodological approach](#methodological-approach)
@@ -17,6 +18,21 @@
         - [*Mycobacterium bovis*](#mycobacterium-bovis)  
         - [Brucelosis: *Brucella abortus*](#brucelosis)  
         - [Paratuberculosis: *Mycobacterium paratuberculosis*](#paratuebrculosis)
+
+1. [Introduction](#introduction)
+
+2. [Methodological approach](#methodological-approach)
+        - [R packages](#r-packages)             
+        - [Statistical analysis](#statistical-analysis)    
+
+3. [Diseases and their pathogens"](#diseases-and-their-pathogens)  
+        - [*Leptospira* sp.](#leptospira-sp.)  
+        - [Aujeszky's Disease Virus](#aujeszky's-disease-virus)  
+        - [Hepatitis E Virus](#hepatitis-e-virus)  
+        - [*Mycobacterium bovis*](#mycobacterium-bovis)  
+        - [Brucelosis: *Brucella abortus*](#brucelosis)  
+        - [Paratuberculosis: *Mycobacterium paratuberculosis*](#paratuebrculosis)
+
 
 
 Introduction
