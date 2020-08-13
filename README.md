@@ -10,7 +10,7 @@
 
 2. Methodological approach
     -   [R packages](./R_packages/rpackages.Rmd)    
-    -   [Statistical analysis](#statistical-analysis)    
+    -   [Statistical methods](#statistical-analysis)    
 
 3. Diseases and their pathogens  
     -   [*Leptospira* sp.](#leptospira-sp.)  
@@ -22,17 +22,4 @@
     -   [Toxoplasmosis: *Toxoplasma gondii*](#toxoplasmosis)
 
 
-
-
-
-
-
-
-
-Methodological approach
-----------
-
-[1. R packages](./R_packages/rpackages.Rmd)  
-[2. Methodological approach](./Methods/Methods.Rmd)  
-[3. Diseases and their pathogens](./Variables/README.md)  
 
