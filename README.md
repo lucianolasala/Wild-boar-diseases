@@ -29,7 +29,7 @@ Introduction
 Methodological approach
 ----------
 
-[1. R packages](./rpackages/rpackages/README.md)
+[1. R packages](./rpackages/rpackages/README.Rmd)
 
 [2. Occurrence data processing](./Occurrences/README.md)
 
