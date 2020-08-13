@@ -1,16 +1,12 @@
 ### *Leptospira* sp.
 ---------- 
 
-
-
-
 Prevalence of infection was ... 
 Results show the presence The analysis
 
 
-Introduction
 
-
+#### R code used to produce plots
 
     arg <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm2.shp")
 
@@ -37,7 +33,7 @@ Introduction
     AD
 
 ****
-#### Inset creation
+#### Map inset
 
     arginset <- st_read("C:/Users/User/Documents/Analyses/Wild boar 
     diseases/Shapefiles/ARG_adm/ARG_adm0.shp")
