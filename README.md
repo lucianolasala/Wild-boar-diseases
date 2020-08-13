@@ -7,7 +7,7 @@
 1. [Introduction](#introduction)
 
 2. [Methodological approach](#methodological-approach)  
-    -   [R packages](#r-packages)  
+    -   [R packages](./R_packages/rpackages.Rmd)    
     -   [Statistical analysis](#statistical-analysis)    
 
 3. [Diseases and their pathogens](#diseases-and-their-pathogens)  
