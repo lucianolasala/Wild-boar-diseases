@@ -1,7 +1,6 @@
-#### Main map creation
+#### Map creation
 
     arg <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm2.shp")
-
     studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "R?o Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
 
     studyarea1 <- cbind(studyarea, st_coordinates(st_centroid(studyarea)))
@@ -33,7 +32,8 @@
     #geom_point(data = df1, aes(x = LONGITUDE, y = LATITUDE, colour = ACTOR1), size=1, alpha=0.5)
     
     AD
-    
+
+***    
 #### Inset creation
     
     arginset <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm0.shp")
