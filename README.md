@@ -10,8 +10,8 @@
 2. Methodological approach
     -   [R packages](./R-packages/R-packages.md)    
     -   [Statistical methods](./Statistical_methods/Methods.md)    
-    
-3. Results by disease and related pathogens  
+
+3. Scripts, results by disease and related pathogens  
     -   [*Leptospira* sp.](./Results/Leptospira.md)    
     -   [Aujeszky's Disease Virus](#aujeszky's-disease-virus)  
     -   [Hepatitis E Virus](#hepatitis-e-virus)  
