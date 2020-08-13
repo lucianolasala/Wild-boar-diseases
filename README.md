@@ -11,7 +11,7 @@
     -   [Statistical analysis](#statistical-analysis)    
 
 3.   [Diseases and their pathogens"](#diseases-and-their-pathogens)  
-    -    [*Leptospira* sp.](#leptospira-sp.)  
+    - [*Leptospira* sp.](#leptospira-sp.)  
     - [Aujeszky's Disease Virus](#aujeszky's-disease-virus)  
     - [Hepatitis E Virus](#hepatitis-e-virus)  
     - [*Mycobacterium bovis*](#mycobacterium-bovis)  
