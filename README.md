@@ -12,13 +12,13 @@
     -   [Statistical methods](./Statistical_methods/Methods.md)    
 
 3. Scripts, results by disease and related pathogens  
-    -   [*Leptospira* sp.](./Results/Leptospira_results.md)    
-    -   [Aujeszky's Disease Virus](#aujeszky's-disease-virus)  
-    -   [Hepatitis E Virus](#hepatitis-e-virus)  
-    -   [*Mycobacterium bovis*](#mycobacterium-bovis)  
-    -   [Brucelosis: *Brucella abortus*](#brucelosis)  
-    -   [Paratuberculosis: *Mycobacterium paratuberculosis*](#paratuebrculosis)  
-    -   [Toxoplasmosis: *Toxoplasma gondii*](#toxoplasmosis)
+    -   [Leptospirosis](./Results/Leptospira_results.md)    
+    -   [Aujeszky's Disease](#aujeszky's-disease-virus)  
+    -   [Hepatitis E](#hepatitis-e-virus)  
+    -   [Tuberculosis](#mycobacterium-bovis)  
+    -   [Brucelosis](#brucelosis)  
+    -   [Paratuberculosis](#paratuebrculosis)  
+    -   [Toxoplasmosis](#toxoplasmosis)
 
 
 
