@@ -9,16 +9,16 @@
 
 #### 2. Methodological approach  
 - [R packages](./R-packages/R-packages.md)    
--   [Statistical methods](./Statistical_methods/Methods.md)    
+- [Statistical methods](./Statistical_methods/Methods.md)    
 
 #### 3. Scripts, results by disease and related pathogens    
--   [Leptospirosis](./Results/Leptospira_results.md)    
--   [Aujeszky's Disease](#aujeszky's-disease-virus)  
--   [Hepatitis E](#hepatitis-e-virus)  
--   [Tuberculosis](#mycobacterium-bovis)  
--   [Brucelosis](#brucelosis)  
-    -   [Paratuberculosis](#paratuebrculosis)  
-    -   [Toxoplasmosis](#toxoplasmosis)
+- [Leptospirosis](./Results/Leptospira_results.md)    
+- [Aujeszky's Disease](#aujeszky's-disease-virus)  
+- [Hepatitis E](#hepatitis-e-virus)  
+- [Tuberculosis](#mycobacterium-bovis)  
+- [Brucelosis](#brucelosis)  
+- [Paratuberculosis](#paratuebrculosis)  
+- [Toxoplasmosis](#toxoplasmosis)
 
 
 
