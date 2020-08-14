@@ -4,14 +4,14 @@
 
 ### Table of Contents
 
-1. Introduction
+#### 1. Introduction
 > Here, we analyze the distribution of wild boar (*Sus scrofa*) pathogens in southwest Buenos Aires province, Argentina. 
 
-2. Methodological approach
+#### 2. Methodological approach
     -   [R packages](./R-packages/R-packages.md)    
     -   [Statistical methods](./Statistical_methods/Methods.md)    
 
-3. Scripts, results by disease and related pathogens  
+#### 3. Scripts, results by disease and related pathogens  
     -   [Leptospirosis](./Results/Leptospira_results.md)    
     -   [Aujeszky's Disease](#aujeszky's-disease-virus)  
     -   [Hepatitis E](#hepatitis-e-virus)  
