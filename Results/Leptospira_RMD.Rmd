@@ -1,27 +1,10 @@
----
-title: "Untitled"
-author: "Luciano F. La Sala"
-date: "14/8/2020"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
----
-title: "Untitled"
-author: "Luciano F. La Sala"
-date: "14/8/2020"
-output: html_document
----
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-```{r include = TRUE, echo=FALSE}
+```{r include = TRUE, echo = FALSE}
 # Map creation
     arg <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm2.shp")
     studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "R?o Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
