@@ -37,21 +37,16 @@ rm(list=ls(all=TRUE))
 
 library(rgeos)
 library(rgdal)
-library(leaflet)
 library(magrittr)
 library(readxl)
 
-Leptospira <- read_excel("~/Analyses/Wild boar diseases/Leptospira/Leptospira.xlsx", sheet = "Hoja2")
+Leptospira <- read_excel("~/Analyses/Wild boar diseases/Leptospira/Leptospira.xlsx", sheet = "Leptospira_distance")
 
 View(Leptospira)
-
-class(Leptospira)
-head(Leptospira)
 
 # Load all points
 
 points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Leptospira/Output/Leptospira_distance.csv", sep = ",")
-head(points)
 
 posits <- points[with(points, Resultado == 1),]
 length(posits$Resultado)
@@ -59,19 +54,17 @@ length(posits$Resultado)
 negats <- points[with(points, Resultado == 0),]
 length(negats$Resultado)
 
-### Get long and lat from your data.frame. Make sure that the order is in lon/lat.
+# Get longitude and latitude from the data.frame. Make sure that the order is in lon/lat.
 
-xy <- points[,c(3,2)]
-head(xy)
+xy <- points[ ,c(3,2)]
+class(xy)
 
-spdf <- SpatialPointsDataFrame(coords = xy, data = points,
-                               proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+# Transform data.frame to SpatialPointsDataframe
 
-head(spdf)
+spdf <- SpatialPointsDataFrame(coords = xy, data = points, proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+spdf@proj4string
 
-# Project into something - Decimal degrees are no fun to work with when measuring distance!
-
-wgs84 <- CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0")
+# Define a projection - Decimal degrees are no fun to work with when measuring distance
 
 utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0") # Opcion 1
 
