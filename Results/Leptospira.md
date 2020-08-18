@@ -1,6 +1,6 @@
 ### Leptospirosis
 
->Prevalence of infection
+>Prevalence of infection was 20.2% (12/104).
 
 
 R scripts used to produce the image below are presented [here](./Leptospira.R).

@@ -50,7 +50,7 @@ head(Leptospira)
 
 # Load all points
 
-points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Aujeszky/Output/Aujeszky_distance.csv", sep = ",")
+points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Leptospira/Output/Leptospira_distance.csv", sep = ",")
 head(points)
 
 posits <- points[with(points, Resultado == 1),]
@@ -155,7 +155,7 @@ mean_dist_neg
 # Test normality: 
 # H0 = La distribuci?n es normal
 # H1 = La distribuci?n no es normal
-# Si p > 0.05 no rechazamos la hip?tesis nula
+# Si p > 0.05 no rechazamos la hipotesis nula
 
 normality = shapiro.test(dist_neg$Nearest_farm)
 normality
@@ -206,3 +206,12 @@ wilcoxon = wilcox.test(x = df$Nearest_farm, y = df$Resultado, alternative = "two
                        paired = FALSE, conf.int = 0.95) 
 
 wilcoxon
+
+# Prevalence estimation
+
+points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Leptospira/Output/Leptospira_distance.csv", sep = ",")
+head(points)
+
+prev <- (round((sum((points$Resultado == 1)/length(points$Plot))*100), digits = 1))
+prev
+
