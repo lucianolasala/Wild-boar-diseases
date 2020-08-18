@@ -13,7 +13,7 @@
 
 #### 3. Scripts, results by disease and related pathogens    
 - [Leptospirosis](./Results/Leptospira.md)    
-- [Aujeszky's Disease](#./Results/Aujeszky.md)  
+- [Aujeszky's Disease](./Results/Aujeszky.md)  
 - [Hepatitis E](#hepatitis-e-virus)  
 - [Tuberculosis](#mycobacterium-bovis)  
 - [Brucelosis](#brucelosis)  
