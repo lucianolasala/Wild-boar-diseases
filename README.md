@@ -12,10 +12,9 @@
 - [Statistical methods](./Statistical_methods/Methods.md)    
 
 #### 3. Scripts, results by disease and related pathogens    
-- [Leptospirosis]    
+- Leptospirosis  
     - [General results](./Results/Leptospira.md)  
     - [R scripts](./Results/Leptospira.R)  
-
 - [Aujeszky's disease](./Results/Aujeszky.md)  
 - [Hepatitis E](#hepatitis-e-virus)  
 - [Tuberculosis](#mycobacterium-bovis)  
