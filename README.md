@@ -13,7 +13,7 @@
 
 #### 3. Scripts, results by disease and related pathogens
 
-<img src="(https://user-images.githubusercontent.com/20196847/90587214-300e6e80-e1af-11ea-9c75-ff411360d73f.png)" height="120" width="120" img align="right">
+<img src="(https://user-images.githubusercontent.com/20196847/90587214-300e6e80-e1af-11ea-9c75-ff411360d73f.png)" height="120" width="120" img align="right">  
 
 - Leptospirosis  
     - [General results](./Results/Leptospira.md)  
