@@ -11,7 +11,10 @@
 - [R packages](./R-packages/R-packages.md)    
 - [Statistical methods](./Statistical_methods/Methods.md)    
 
-#### 3. Scripts, results by disease and related pathogens    
+#### 3. Scripts, results by disease and related pathogens
+
+<img src="(https://user-images.githubusercontent.com/20196847/90585842-3222fe00-e1ac-11ea-9fc9-73bc1b9d1f56.jpg)" height="120" width="120" img align="right">
+
 - Leptospirosis  
     - [General results](./Results/Leptospira.md)  
     - [R scripts](./Results/Leptospira.R)  
