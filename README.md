@@ -15,7 +15,9 @@
 - Leptospirosis  
     - [General results](./Results/Leptospira.md)  
     - [R scripts](./Results/Leptospira.R)  
-- [Aujeszky's disease](./Results/Aujeszky.md)  
+- Aujeszky's disease
+    - [General results](./Results/Aujeszky.md)
+    - [R scripts](./Results/Aujeszky.R) 
 - [Hepatitis E](#hepatitis-e-virus)  
 - [Tuberculosis](#mycobacterium-bovis)  
 - [Brucelosis](#brucelosis)  
