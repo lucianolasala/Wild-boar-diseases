@@ -147,7 +147,7 @@ plot.new()
 p <- ggplot(dist_neg, aes(sample = Nearest_farm)) + stat_qq()
 p
 
-# Positive farms
+# Positive farmsc
 
 dist_pos <- subset(df, Resultado == 1) 
 mean_dist_pos <- mean(dist_pos$Nearest_farm) 
