@@ -57,7 +57,6 @@ length(negats$Resultado)
 # Get longitude and latitude from the data.frame. Make sure that the order is in lon/lat.
 
 xy <- points[ ,c(3,2)]
-class(xy)
 
 # Transform data.frame to SpatialPointsDataframe
 
@@ -69,10 +68,7 @@ spdf@proj4string
 utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0") # Opcion 1
 
 utm20S <- CRS("+init=epsg:32720") # Opcion 2
-
 points_proj <- spTransform(spdf, utm20S)
-points_proj
-class(points_proj)
 
 # Load farms data
 
@@ -81,22 +77,14 @@ farms@coords
 
 area_estudio <- readOGR("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Study_area.shp")
 
-fall.within.poly <- farms[area_estudio,]
-head(fall.within.poly)
-length(fall.within.poly$Latitud)
+fall.within.poly <- farms[area_estudio,]  # 460 farms
 
 farm_coords <- as.data.frame(fall.within.poly@coords)
-head(farm_coords)
 
 colnames(farm_coords) <- c("Long", "Lat")
-head(farm_coords)
-length(farm_coords$Long)
 
 farm_spdf <- SpatialPointsDataFrame(coords = farm_coords, data = farm_coords,
                                     proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
-
-farm_spdf
-head(farm_spdf)
 
 # Project into something - Decimal degrees are no fun to work with when measuring distance!
 
@@ -105,20 +93,20 @@ utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,
 utm20S <- CRS("+init=epsg:32720") # Opcion 2
 
 farms_proj <- spTransform(farm_spdf, utm20S)
-farms_proj
 class(farms_proj)
-
 farms_proj@data
 
 writeOGR(farms_proj, layer = "Farms_proj", "C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp", driver="ESRI Shapefile")
 
 farms_proj = readOGR("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp")
+class(farms_proj)
+farms_proj@proj4string
 
 farms_proj <- spTransform(farms_proj, utm20S)
 
 dist <- gDistance(points_proj, farms_proj, byid = T)  # Distance between geometries. 
-# Matriz de distancias entre cada jabali (posit y negat)
-# y todas las granjas.  
+                                                      # Matriz de distancias entre cada jabali (posit y negat)
+                                                      # y todas las granjas.  
 dist
 
 min_Distance <- apply(dist, 2, min)  
@@ -136,12 +124,11 @@ points_proj
 
 df <- as.data.frame(points_proj)
 df
-is.data.frame(df)
 
-# Normality check negative farms
+# Next we check normality assumptions for both groups separately
+# Negative farms
 
 dist_neg <- subset(df, Resultado == 0) 
-is.data.frame(dist_neg)
 mean_dist_neg <- mean(dist_neg$Nearest_farm) 
 mean_dist_neg
 
@@ -160,10 +147,7 @@ plot.new()
 p <- ggplot(dist_neg, aes(sample = Nearest_farm)) + stat_qq()
 p
 
-
-###########################################################
-
-# Normality check positive farms
+# Positive farms
 
 dist_pos <- subset(df, Resultado == 1) 
 mean_dist_pos <- mean(dist_pos$Nearest_farm) 

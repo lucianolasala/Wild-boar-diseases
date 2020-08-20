@@ -18,7 +18,9 @@
 - Aujeszky's disease
     - [General results](./Results/Aujeszky.md)
     - [R scripts](./Results/Aujeszky.R) 
-- [Hepatitis E](#hepatitis-e-virus)  
+- [Hepatitis E](#hepatitis-e-virus)
+    - [General results](./Results/Aujeszky.md)
+    - [R scripts](./Results/Aujeszky.R)
 - [Tuberculosis](#mycobacterium-bovis)  
 - [Brucelosis](#brucelosis)  
 - [Paratuberculosis](#paratuebrculosis)  
