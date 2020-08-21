@@ -30,7 +30,7 @@ AD <- ggplot() +
 AD
 
 ##################################################################
-### Distance analysis
+## Distance analysis
 ##################################################################
 
 rm(list=ls(all=TRUE))
@@ -59,11 +59,13 @@ length(negats$Resultado)
 xy <- points[ ,c(3,2)]
 
 # Transform data.frame to SpatialPointsDataframe
+#####################
 
 spdf <- SpatialPointsDataFrame(coords = xy, data = points, proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 spdf@proj4string
 
 # Define a projection - Decimal degrees are no fun to work with when measuring distance
+#####################
 
 utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0") # Opcion 1
 
@@ -71,6 +73,7 @@ utm20S <- CRS("+init=epsg:32720") # Opcion 2
 points_proj <- spTransform(spdf, utm20S)
 
 # Load farms data
+#################
 
 farms <- readOGR("C:/Users/User/Documents/Analyses/Wild boar ENM/Spatial data/Capas SENASA/Farm distribution.shp")
 farms@coords
@@ -87,6 +90,7 @@ farm_spdf <- SpatialPointsDataFrame(coords = farm_coords, data = farm_coords,
                                     proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 
 # Project into something - Decimal degrees are no fun to work with when measuring distance!
+#################
 
 utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0") # Opcion 1
 
@@ -97,6 +101,9 @@ class(farms_proj)
 farms_proj@data
 
 writeOGR(farms_proj, layer = "Farms_proj", "C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp", driver="ESRI Shapefile")
+
+# Read in projected farm data
+########################
 
 farms_proj = readOGR("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp")
 class(farms_proj)
@@ -121,48 +128,30 @@ points_proj@data$Near_ID <- as.vector(apply(dist, 2, function(x) which(x == min(
 points_proj
 
 # Comparison between positives and negatives
+#################
 
 df <- as.data.frame(points_proj)
 df
 
-# Next we check normality assumptions for both groups separately
-# Negative farms
+# Next we check normality assumptions for both groups
+#################
 
-dist_neg <- subset(df, Resultado == 0) 
-mean_dist_neg <- mean(dist_neg$Nearest_farm) 
-mean_dist_neg
+normality1 = shapiro.test(df$Nearest_farm)
+normality1
 
 # Test normality: 
-# H0 = La distribuci?n es normal
-# H1 = La distribuci?n no es normal
-# Si p > 0.05 no rechazamos la hipotesis nula
+# H0 = dist. is normal
+# H1 = dist. is not normal 
+# If p > 0.05 cannot reject H0
 
-normality = shapiro.test(dist_neg$Nearest_farm)
-normality
-
-# P < 0.01, por lo que rechazamos H0 (datos no normales)
+# In our case, p-value = 1.75e-11, then reject H0 and accept H1
 
 plot.new()
 
-p <- ggplot(dist_neg, aes(sample = Nearest_farm)) + stat_qq()
+p <- ggplot(df, aes(sample = Nearest_farm)) + 
+     stat_qq()
+
 p
-
-# Positive farms
-
-dist_pos <- subset(df, Resultado == 1) 
-mean_dist_pos <- mean(dist_pos$Nearest_farm) 
-mean_dist_pos
-
-normality.pos = shapiro.test(dist_pos$Nearest_farm)
-normality.pos
-
-# P < 0.01, por lo que rechazamos H0 (datos no normales)
-
-plot.new()
-
-p <- ggplot(dist_pos, aes(sample = Nearest_farm)) + stat_qq()
-p
-
 
 ###################################################################               
 
