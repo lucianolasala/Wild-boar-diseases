@@ -148,9 +148,12 @@ normality1
 
 plot.new()
 
-p <- ggplot(df, aes(sample = Nearest_farm)) + 
-     stat_qq()
-
+p <- ggplot(df) +
+     stat_qq(aes(sample=Nearest_farm, colour = "red")) +
+     theme(legend.position = "none") +
+     theme(axis.title.y = element_blank(),
+           axis.title.x = element_blank())
+     
 p
 
 ###################################################################               
