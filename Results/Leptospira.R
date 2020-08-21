@@ -59,13 +59,11 @@ length(negats$Resultado)
 xy <- points[ ,c(3,2)]
 
 # Transform data.frame to SpatialPointsDataframe
-#####################
 
 spdf <- SpatialPointsDataFrame(coords = xy, data = points, proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 spdf@proj4string
 
 # Define a projection - Decimal degrees are no fun to work with when measuring distance
-#####################
 
 utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0") # Opcion 1
 
@@ -73,7 +71,6 @@ utm20S <- CRS("+init=epsg:32720") # Opcion 2
 points_proj <- spTransform(spdf, utm20S)
 
 # Load farms data
-#################
 
 farms <- readOGR("C:/Users/User/Documents/Analyses/Wild boar ENM/Spatial data/Capas SENASA/Farm distribution.shp")
 farms@coords
@@ -90,7 +87,6 @@ farm_spdf <- SpatialPointsDataFrame(coords = farm_coords, data = farm_coords,
                                     proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 
 # Project into something - Decimal degrees are no fun to work with when measuring distance!
-#################
 
 utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0") # Opcion 1
 
@@ -103,7 +99,6 @@ farms_proj@data
 writeOGR(farms_proj, layer = "Farms_proj", "C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp", driver="ESRI Shapefile")
 
 # Read in projected farm data
-########################
 
 farms_proj = readOGR("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp")
 class(farms_proj)
@@ -128,13 +123,11 @@ points_proj@data$Near_ID <- as.vector(apply(dist, 2, function(x) which(x == min(
 points_proj
 
 # Comparison between positives and negatives
-#################
 
 df <- as.data.frame(points_proj)
 df
 
 # Next we check normality assumptions for both groups
-#################
 
 normality1 = shapiro.test(df$Nearest_farm)
 normality1
@@ -152,7 +145,11 @@ p <- ggplot(df) +
      stat_qq(aes(sample=Nearest_farm, colour = "red")) +
      theme(legend.position = "none") +
      theme(axis.title.y = element_blank(),
-           axis.title.x = element_blank())
+           axis.title.x = e
+           
+           
+           
+            lement_blank())
      
 p
 
