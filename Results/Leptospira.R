@@ -35,6 +35,8 @@ AD
 
 rm(list=ls(all=TRUE))
 
+install.packages("rgeos","rgdal","magrittr","readxl")
+
 library(rgeos)
 library(rgdal)
 library(magrittr)
@@ -68,6 +70,7 @@ spdf@proj4string
 utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0") # Opcion 1
 
 utm20S <- CRS("+init=epsg:32720") # Opcion 2
+
 points_proj <- spTransform(spdf, utm20S)
 
 # Load farms data
@@ -142,16 +145,18 @@ normality1
 plot.new()
 
 p <- ggplot(df) +
-     stat_qq(aes(sample=Nearest_farm, colour = "red")) +
+     stat_qq(aes(sample = Nearest_farm, colour = "red"), shape=21) +
      theme(legend.position = "none") +
-     theme(axis.title.y = element_blank(),
-           axis.title.x = e
-           
-           
-           
-            lement_blank())
-     
+     labs(x = "Theoretical", y = "Observed") +
+     theme(axis.title.x = element_text(size = 10, face = "bold.italic"),
+     axis.title.y = element_text(size = 10, face = "bold.italic")) +
+     theme(plot.margin = unit(c(1,1,1,1), "cm")) +
+     theme(axis.title.x = element_text(margin = margin(t = 15)),
+     axis.title.y = element_text(margin = margin(r = 15)))
 p
+
+ggsave(filename = "Figure_1.jpg", plot = p, device = "jpeg", path = NULL,
+       scale = 1, dpi = 300, limitsize = TRUE)
 
 ###################################################################               
 
