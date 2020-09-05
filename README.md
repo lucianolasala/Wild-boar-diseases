@@ -21,11 +21,16 @@
 - [Hepatitis E]
     - [General results](./Results/Aujeszky.md)
     - [R scripts](./Results/Aujeszky.R)
-- [Tuberculosis](#mycobacterium-bovis)  
+- [Tuberculosis]
+    - [General results](./Results/Aujeszky.md)
+    - [R scripts](./Results/Aujeszky.R)
 - Brucelosis
     - [General results](./Results/Brucella.md)
-- [Paratuberculosis](#paratuebrculosis)  
-- [Toxoplasmosis](#toxoplasmosis)
-
-
+    - [R scripts](./Results/Aujeszky.R)
+- [Paratuberculosis](#paratuebrculosis)
+    - [General results](./Results/Brucella.md)
+    - [R scripts](./Results/Aujeszky.R)
+- [Toxoplasmosis]
+    - [General results](./Results/Brucella.md)
+    - [R scripts](./Results/Aujeszky.R)
 

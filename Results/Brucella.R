@@ -29,7 +29,7 @@ AD <- ggplot() +
   theme(axis.title.x = element_blank(),
         axis.title.y = element_blank()) +
   coord_sf(xlim = c(-65.5, -62), ylim = c(-41.25, -38.5)) +
-  annotate("text", x = -64.0, y = -40.6, label = "RR = 13.4", color = "black", size = 3.5, fontface = 2)
+  annotate("text", x = -64.0, y = -40.6, label = "RR = 13,4", color = "black", size = 3.5, fontface = 2)
 
 AD
 
@@ -60,7 +60,7 @@ plot.with.inset <-
 
 plot.with.inset
 
-ggsave(filename = "Aujeszky_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
+ggsave(filename = "Brucella_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
        scale = 1, dpi = 600, limitsize = TRUE)  
 
 
