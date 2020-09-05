@@ -18,19 +18,19 @@
 - Aujeszky's disease
     - [General results](./Results/Aujeszky.md)
     - [R scripts](./Results/Aujeszky.R) 
-- [Hepatitis E]
+- Hepatitis E
     - [General results](./Results/Aujeszky.md)
     - [R scripts](./Results/Aujeszky.R)
-- [Tuberculosis]
+- Tuberculosis
     - [General results](./Results/Aujeszky.md)
     - [R scripts](./Results/Aujeszky.R)
 - Brucelosis
     - [General results](./Results/Brucella.md)
     - [R scripts](./Results/Aujeszky.R)
-- [Paratuberculosis](#paratuebrculosis)
+- Paratuberculosis
     - [General results](./Results/Brucella.md)
     - [R scripts](./Results/Aujeszky.R)
-- [Toxoplasmosis]
+- Toxoplasmosis
     - [General results](./Results/Brucella.md)
     - [R scripts](./Results/Aujeszky.R)
 
