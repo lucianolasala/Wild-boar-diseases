@@ -3,7 +3,7 @@
 rm(list=ls(all=TRUE))
 
 arg <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm2.shp")
-studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "Rio Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
+studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "Río Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
 
 studyarea1 <- cbind(studyarea, st_coordinates(st_centroid(studyarea)))
 
@@ -54,7 +54,7 @@ inset <- ggplot() +
 plot.with.inset <-
   ggdraw() +
   draw_plot(AD) +
-  draw_plot(inset, x = 0.22, y = 0.6, width = .3, height = .3)
+  draw_plot(inset, x = 0.16, y = 0.6, width = .3, height = .3)
 
 plot.with.inset
 

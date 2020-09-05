@@ -4,8 +4,8 @@ rm(list=ls(all=TRUE))
 
 arg <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm2.shp")
 
-studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "Río Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
-plot(studyarea)
+studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "RÃ­o Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
+
 studyarea1 <- cbind(studyarea, st_coordinates(st_centroid(studyarea)))
 
 occs <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Brucelosis/Output/Brucella.csv", sep = ",", dec = ".") %>%
@@ -29,7 +29,7 @@ AD <- ggplot() +
   theme(axis.title.x = element_blank(),
         axis.title.y = element_blank()) +
   coord_sf(xlim = c(-65.5, -62), ylim = c(-41.25, -38.5)) +
-  annotate("text", x = -64.0, y = -40.6, label = "RR = 2,8", color = "black", size = 3.5, fontface = 2)
+  annotate("text", x = -64.0, y = -40.6, label = "RR = 13.4", color = "black", size = 3.5, fontface = 2)
 
 AD
 
@@ -56,11 +56,11 @@ inset <- ggplot() +
 plot.with.inset <-
   ggdraw() +
   draw_plot(AD) +
-  draw_plot(inset, x = 0.22, y = 0.6, width = .3, height = .3)
+  draw_plot(inset, x = 0.16, y = 0.6, width = .3, height = .3)
 
 plot.with.inset
 
-ggsave(filename = "Brucella_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
+ggsave(filename = "Aujeszky_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
        scale = 1, dpi = 600, limitsize = TRUE)  
 
 
