@@ -5,7 +5,7 @@
 
 R scripts used to produce the image below are presented [here](./Leptospira.R).
 
-<img src="https://user-images.githubusercontent.com/20196847/92311237-bf779800-ef8b-11ea-9991-cdb5914ea133.jpg" height="400" width="400" img align="center">
+<img src="https://user-images.githubusercontent.com/20196847/92311237-bf779800-ef8b-11ea-9991-cdb5914ea133.jpg" width="400" img align="center">
 
 #### Legend for figure: Distribution of cases of Leptospira sp. in wild boar from southwest Buenos Aires province. Circles represent locations with one (white), two (green) and frour (red) cases.        
 
