@@ -22,7 +22,7 @@
     - [General results](./Results/Aujeszky.md)
     - [R scripts](./Results/Aujeszky.R)
 - [Tuberculosis](#mycobacterium-bovis)  
-- [Brucelosis](#brucelosis)
+- Brucelosis
     - [General results](./Results/Brucella.md)
 - [Paratuberculosis](#paratuebrculosis)  
 - [Toxoplasmosis](#toxoplasmosis)
