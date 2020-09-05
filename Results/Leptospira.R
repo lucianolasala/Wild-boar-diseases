@@ -1,7 +1,9 @@
 # Mapping wild boar clusters of disease
 
+rm(list=ls(all=TRUE))
+
 arg <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm2.shp")
-studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "R?o Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
+studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "Rio Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
 
 studyarea1 <- cbind(studyarea, st_coordinates(st_centroid(studyarea)))
 
@@ -28,6 +30,38 @@ AD <- ggplot() +
   annotate("text", x = -62.9, y = -39.8, label = "RR = 5,4", color = "black", size = 3.5, fontface = 2)
 
 AD
+
+################################################
+# Inset creation
+
+arginset <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm0.shp")
+
+poly <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Polygon/Polygon.shp") 
+
+inset <- ggplot() +
+  geom_sf(data = arginset, color = "black", alpha = 1) +
+  geom_sf(data = poly, color = "red", alpha = 0, size = 1) +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) + 
+  theme(panel.background = element_blank()) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        plot.background = element_rect(fill = "lightblue", colour = "black"))
+
+plot.with.inset <-
+  ggdraw() +
+  draw_plot(AD) +
+  draw_plot(inset, x = 0.22, y = 0.6, width = .3, height = .3)
+
+plot.with.inset
+
+ggsave(filename = "Leptospira_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
+       scale = 1, dpi = 600, limitsize = TRUE)
+
+
 
 ##################################################################
 ## Distance analysis
