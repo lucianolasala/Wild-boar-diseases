@@ -5,7 +5,7 @@
 ### Contenidos
 
 #### 1. Introducción  
-> Se analiza la distribición espacial de patógenos jabalíes (*Sus scrofa*) del sudoeste de la provincia de Buenos Aires province, Argentina. 
+> 
 
 #### 2. Enfoque metodológico  
 - [Paquetes de R](./R-packages/R-packages.md)    
