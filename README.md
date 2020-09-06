@@ -15,22 +15,22 @@
 - Leptospirosis  
     - [Resultados generales](./Results/Leptospira.md)  
     - [Scripts](./Results/Leptospira.R)  
-- Aujeszky's disease
-    - [General results](./Results/Aujeszky.md)
-    - [R scripts](./Results/Aujeszky.R) 
+- Enfermedad de Aujeszky
+    - [Resultados generales](./Results/Aujeszky.md)
+    - [Scripts](./Results/Aujeszky.R) 
 - Hepatitis E
-    - [General results](./Results/Aujeszky.md)
-    - [R scripts](./Results/Aujeszky.R)
+    - [Resultados generales](./Results/Aujeszky.md)
+    - [Scripts](./Results/Aujeszky.R)
 - Tuberculosis
-    - [General results](./Results/Aujeszky.md)
-    - [R scripts](./Results/Aujeszky.R)
+    - [Resultados generales](./Results/Aujeszky.md)
+    - [Scripts](./Results/Aujeszky.R)
 - Brucelosis
-    - [General results](./Results/Brucella.md)
-    - [R scripts](./Results/Aujeszky.R)
+    - [Resultados generales](./Results/Brucella.md)
+    - [Scripts](./Results/Aujeszky.R)
 - Paratuberculosis
-    - [General results](./Results/Brucella.md)
-    - [R scripts](./Results/Aujeszky.R)
+    - [Resultados generales](./Results/Brucella.md)
+    - [Scripts](./Results/Aujeszky.R)
 - Toxoplasmosis
-    - [General results](./Results/Brucella.md)
-    - [R scripts](./Results/Aujeszky.R)
+    - [Resultados generales](./Results/Brucella.md)
+    - [Scripts](./Results/Aujeszky.R)
 
