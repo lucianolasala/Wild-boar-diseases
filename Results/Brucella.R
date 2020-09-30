@@ -1,4 +1,4 @@
-# Brucella
+# Brucellosis
 
 rm(list=ls(all=TRUE))
 
