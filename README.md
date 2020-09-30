@@ -22,8 +22,8 @@
     - [Resultados generales](./Results/Aujeszky.md)
     - [Scripts](./Results/Aujeszky.R)
 - Tuberculosis
-    - [Resultados generales](./Results/Aujeszky.md)
-    - [Scripts](./Results/Aujeszky.R)
+    - [Resultados generales](./Results/Tuberculosis.md)
+    - [Scripts](./Results/Tuberculosis.R)
 - Brucelosis
     - [Resultados generales](./Results/Brucella.md)
     - [Scripts](./Results/Aujeszky.R)
