@@ -1,10 +1,10 @@
-### Tuberculosis sp.
+### Tuberculosis
 
-> La prevalencia de infección fue del 37,5% (*n* = 48). Se detectó un solo cluster marginalmente no significativo (*p* = 0,066), el cual tuvo un radio indefinido matemáticamente por incluir 4 casos con las mismas coordenadas. El riesgo relativo (RR) dentro del cluster fue de 3,1.     
+> La prevalencia de infección fue de 37,5% (*n* = 48). No se detectaron clusters significativos.     
 
 
 El código utilizado para producir el mapa se encuentra [aquí](./Tuberculosis.R).
 
-<img src="https://user-images.githubusercontent.com/20196847/94725816-baabc700-0332-11eb-9d96-ccc6ab3e5dc7.jpg" width="400" img align="center">
+<img src="https://user-images.githubusercontent.com/20196847/94731637-7e309900-033b-11eb-8f57-8191498b76dd.jpg" width="400" img align="center">
 
->Leyenda de figure: Distribución de casos de tuberculosis en jabalíes del sudoeste de la provincia de Buenos Aires. Los círculos representan sitios con uno (blanco), dos (verde) y cuatro casos (negro).
+> Leyenda: Distribución de casos de tuberculosis en jabalíes del sudoeste de la provincia de Buenos Aires. Los círculos representan sitios con uno (blanco), dos (verde) y cuatro casos (rojo). 

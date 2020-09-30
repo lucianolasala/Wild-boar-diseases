@@ -1,4 +1,6 @@
-# Mapping wild boar clusters of disease
+#-----------------------------------------------------------------
+# Analisis de agrupamientos: Leptospirosis 
+#-----------------------------------------------------------------
 
 rm(list=ls(all=TRUE))
 
@@ -31,8 +33,9 @@ AD <- ggplot() +
 
 AD
 
-################################################
-# Inset creation
+#-----------------------------------------------------------------
+# Inset
+#-----------------------------------------------------------------
 
 arginset <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm0.shp")
 
@@ -62,10 +65,9 @@ ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project
        scale = 1, dpi = 600, limitsize = TRUE)
 
 
-
-##################################################################
-## Distance analysis
-##################################################################
+#-----------------------------------------------------------------
+# Analisis de distancias
+#-----------------------------------------------------------------
 
 rm(list=ls(all=TRUE))
 

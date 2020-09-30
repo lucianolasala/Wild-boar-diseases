@@ -1,15 +1,15 @@
 ### Leptospirosis
 
->Prevalence of infection was 20.2% (12/104).  
+> La prevalencia de infección fue de 20,2% (*n* = 104).   
 
-
-R scripts used to produce the image below are presented [here](./Leptospira.R).
+El código utilizado para producir el mapa se presenta [aquí](./Leptospira.R).
 
 <img src="https://user-images.githubusercontent.com/20196847/92311237-bf779800-ef8b-11ea-9991-cdb5914ea133.jpg" width="400" img align="center">
 
-#### Legend for figure: Distribution of cases of Leptospira sp. in wild boar from southwest Buenos Aires province. Circles represent locations with one (white), two (green) and frour (red) cases.        
+#### Legenda: Distribución de casos de Leptospira sp. en jabalíes del sudoeste de la provincia de Buenos Aires. Los círculos representan sitios con uno (blando), dos (verde) y cuatro casos (rojo).        
 
->Distance data between cases-controls and nearest farm were not normally distributed.   
+
+> Distance data between cases-controls and nearest farm were not normally distributed.   
 >Test for normality:    
 - H0 = dist. is normal  
 - H1 = dist. is not normal   
