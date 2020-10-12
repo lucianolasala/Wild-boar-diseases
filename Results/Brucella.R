@@ -60,7 +60,7 @@ plot.with.inset <-
 
 plot.with.inset
 
-ggsave(filename = "Brucella_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
+ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project/Wild-boar-diseases/Maps/Brucella_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
        scale = 1, dpi = 600, limitsize = TRUE)  
 
 

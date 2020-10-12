@@ -1,6 +1,6 @@
 ### Leptospirosis
 
-> La prevalencia de infección fue de 20,2% (*n* = 104).   
+> La prevalencia de infección fue de 20,2% (*n* = 104). Se detectó un agrupamiento de casos significativo (*p* = 0,017) dentro del cual el riesgo relativo fue de 5,4. 
 
 El código utilizado para producir el mapa se presenta [aquí](./Leptospira.R).
 
@@ -8,7 +8,7 @@ El código utilizado para producir el mapa se presenta [aquí](./Leptospira.R).
 
 #### Legenda: Distribución de casos de Leptospira sp. en jabalíes del sudoeste de la provincia de Buenos Aires. Los círculos representan sitios con uno (blando), dos (verde) y cuatro casos (rojo).        
 
-
+### Análisis de distancia
 > Distance data between cases-controls and nearest farm were not normally distributed.   
 >Test for normality:    
 - H0 = dist. is normal  

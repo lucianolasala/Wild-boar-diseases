@@ -1,6 +1,6 @@
 ### Aujeszky's disease
 
->Prevalence of infection was ...  
+> La prevalencia de infección fue del 39,6% (*n* = 106).   
 
 
 R scripts used to produce the image below are presented [here](./Leptospira.R).

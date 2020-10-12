@@ -66,7 +66,7 @@ ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project
 
 
 #-----------------------------------------------------------------
-# Analisis de distancias
+# Analisis de distancia
 #-----------------------------------------------------------------
 
 rm(list=ls(all=TRUE))
@@ -82,9 +82,10 @@ Leptospira <- read_excel("~/Analyses/Wild boar diseases/Leptospira/Leptospira.xl
 
 View(Leptospira)
 
-# Load all points
+# Cargar puntos
 
 points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Leptospira/Output/Leptospira_distance.csv", sep = ",")
+head(points)
 
 posits <- points[with(points, Resultado == 1),]
 length(posits$Resultado)
@@ -92,14 +93,19 @@ length(posits$Resultado)
 negats <- points[with(points, Resultado == 0),]
 length(negats$Resultado)
 
-# Get longitude and latitude from the data.frame. Make sure that the order is in lon/lat.
+# Extraer longitud/latitud del data.frame (en ese orden) 
 
-xy <- points[ ,c(3,2)]
+xy <- points[,c(3,2)]
+head(xy)
+class(xy)
 
-# Transform data.frame to SpatialPointsDataframe
+# Transformar el data.frame a SpatialPointsDataframe (sp).
+# Class for spatial attributes that have spatial point locations
 
 spdf <- SpatialPointsDataFrame(coords = xy, data = points, proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 spdf@proj4string
+
+head(spdf@data)
 
 # Define a projection - Decimal degrees are no fun to work with when measuring distance
 
@@ -109,7 +115,7 @@ utm20S <- CRS("+init=epsg:32720") # Opcion 2
 
 points_proj <- spTransform(spdf, utm20S)
 
-# Load farms data
+# Cargar granjas y area de estudio
 
 farms <- readOGR("C:/Users/User/Documents/Analyses/Wild boar ENM/Spatial data/Capas SENASA/Farm distribution.shp")
 farms@coords
@@ -119,11 +125,13 @@ area_estudio <- readOGR("C:/Users/User/Documents/Analyses/Wild boar diseases/Sha
 fall.within.poly <- farms[area_estudio,]  # 460 farms
 
 farm_coords <- as.data.frame(fall.within.poly@coords)
+head(farm_coords)
 
 colnames(farm_coords) <- c("Long", "Lat")
 
 farm_spdf <- SpatialPointsDataFrame(coords = farm_coords, data = farm_coords,
                                     proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+head(farm_spdf)
 
 # Project into something - Decimal degrees are no fun to work with when measuring distance!
 
@@ -137,7 +145,9 @@ farms_proj@data
 
 writeOGR(farms_proj, layer = "Farms_proj", "C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp", driver="ESRI Shapefile")
 
-# Read in projected farm data
+#-----------------------------------------------------------------
+# Cargar datos de granjas proyectados
+#-----------------------------------------------------------------
 
 farms_proj = readOGR("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp")
 class(farms_proj)
@@ -146,8 +156,8 @@ farms_proj@proj4string
 farms_proj <- spTransform(farms_proj, utm20S)
 
 dist <- gDistance(points_proj, farms_proj, byid = T)  # Distance between geometries. 
-                                                      # Matriz de distancias entre cada jabali (posit y negat)
-                                                      # y todas las granjas.  
+                                                      # Matriz de distancias entre cada jabali (104 posit y negat)
+                                                      # y todas las granjas (460).  
 dist
 
 min_Distance <- apply(dist, 2, min)  
@@ -157,6 +167,7 @@ min_Distance
 # The distance vector will stay in order, so just stick it on!
 
 points_proj@data$Nearest_farm <- min_Distance  # Creates column with km to nearest farm
+head(points_proj@data)
 
 points_proj@data$Near_ID <- as.vector(apply(dist, 2, function(x) which(x == min(x))))
 points_proj
