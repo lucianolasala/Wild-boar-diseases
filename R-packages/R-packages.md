@@ -1,6 +1,6 @@
 ### Instalación de paquetes y librerías necesarias
 
-> In this work, the following R packages were used: 
+> En este trabajo se utilizó una serie de paquetes de R y funciones necesarias para realizar los análisis presentados.
 
 pkgs <- c("sf","ggplot2","ggspatial","magrittr","tidyverse","rgdal","cowplot","raster","sp")
 
