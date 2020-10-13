@@ -26,10 +26,10 @@
     - [Scripts](./Results/Tuberculosis.R)
 - Brucelosis
     - [Resultados generales](./Results/Brucella.md)
-    - [Scripts](./Results/Aujeszky.R)
+    - [Scripts](./Results/Brucella.R)
 - Paratuberculosis
-    - [Resultados generales](./Results/Brucella.md)
-    - [Scripts](./Results/Aujeszky.R)
+    - [Resultados generales](./Results/Paratuberculosis.md)
+    - [Scripts](./Results/Paratuberculosis.R)
 - Toxoplasmosis
     - [Resultados generales](./Results/Brucella.md)
     - [Scripts](./Results/Aujeszky.R)
