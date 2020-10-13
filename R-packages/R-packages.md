@@ -1,27 +1,8 @@
-### Introduction
+### Instalación de paquetes y librerías necesarias
+
 > In this work, the following R packages were used: 
 
-    install.packages(sf)
-    install.packages("ggplot2")
-    install.packages("sf")
-    install.packages("ggspatial")
-    install.packages("magrittr")
-    install.packages("tidyverse")
-    install.packages("rgdal")
-    install.packages("cowplot")
-    install.packages("raster")
-    install.packages("sp")
+pkgs <- c("sf","ggplot2","ggspatial","magrittr","tidyverse","rgdal","cowplot","raster","sp")
 
-    library(sf)
-    library(ggplot2)
-    library(ggspatial)
-    library(magrittr)
-    library(tidyverse)
-    library(rgdal)
-    library(cowplot)
-    library(raster)
-    library(sp)
-
-
-
+sapply(pkgs, function(x) library(x, character.only = TRUE))
 
