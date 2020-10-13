@@ -8,7 +8,7 @@
 > 
 
 #### 2. Enfoque metodológico  
-- [Paquetes de R](./R-packages/R-packages.md)    
+- [Paquetes de R](./R-packages/R-packages.R)    
 - [Métodos estadísticos](./Statistical_methods/Methods.md)    
 
 #### 3. Scripts de programación y resultados
