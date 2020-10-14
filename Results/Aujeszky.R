@@ -163,12 +163,14 @@ points_proj@data$Nearest_farm <- min_Distance  # Creates column with km to neare
 head(points_proj@data)
 
 points_proj@data$Near_ID <- as.vector(apply(dist, 2, function(x) which(x == min(x))))
+head(points_proj@data)
 points_proj@data$Near_ID
 
 # Comparison between positives and negatives
 
+class(points_proj)
 df <- as.data.frame(points_proj)
-df
+head(df)
 
 # Next we check normality assumptions for both groups
 
@@ -206,7 +208,8 @@ group_by(df, Resultado) %>%
   summarise(
     count = n(),
     mean = mean(Nearest_farm, na.rm = TRUE),
-    sd = sd(Nearest_farm, na.rm = TRUE)
+    sd = sd(Nearest_farm, na.rm = TRUE),
+    median = median(Nearest_farm, na.rm = TRUE)
   )
 
 # Compute Mann-Whitney-Wilcoxon

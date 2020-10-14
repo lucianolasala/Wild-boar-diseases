@@ -62,3 +62,168 @@ plot.with.inset
 
 ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project/Wild-boar-diseases/Maps/Toxoplasmosis_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
        scale = 1, dpi = 300, limitsize = TRUE)
+
+#-----------------------------------------------------------------
+# Analisis de distancia
+#-----------------------------------------------------------------
+
+rm(list=ls(all=TRUE))
+
+install.packages("rgeos","rgdal","magrittr","readxl")
+
+library(rgeos)
+library(rgdal)
+library(magrittr)
+library(readxl)
+
+# Cargar puntos
+
+points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Toxoplasmosis/Toxoplasmosis_distance.csv", sep = ",")
+head(points)
+
+posits <- points[with(points, Resultado == 1),]
+length(posits$Resultado)
+
+negats <- points[with(points, Resultado == 0),]
+length(negats$Resultado)
+
+# Extraer longitud/latitud del data.frame (en ese orden) 
+
+xy <- points[,c(3,2)]
+head(xy)
+class(xy)
+
+# Transformar el data.frame a SpatialPointsDataframe (sp).
+# Class for spatial attributes that have spatial point locations
+
+spdf <- SpatialPointsDataFrame(coords = xy, data = points, proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+spdf@proj4string
+
+head(spdf@data)
+
+# Define a projection - Decimal degrees are no fun to work with when measuring distance
+
+utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0") # Opcion 1
+
+utm20S <- CRS("+init=epsg:32720") # Opcion 2
+
+points_proj <- spTransform(spdf, utm20S)
+
+# Cargar granjas y area de estudio
+
+farms <- readOGR("C:/Users/User/Documents/Analyses/Wild boar ENM/Spatial data/Capas SENASA/Farm distribution.shp")
+farms@coords
+
+area_estudio <- readOGR("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Study_area.shp")
+
+fall.within.poly <- farms[area_estudio,]  # 460 farms
+
+farm_coords <- as.data.frame(fall.within.poly@coords)
+head(farm_coords)
+
+colnames(farm_coords) <- c("Long", "Lat")
+
+farm_spdf <- SpatialPointsDataFrame(coords = farm_coords, data = farm_coords,
+                                    proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+head(farm_spdf)
+
+# Project into something - Decimal degrees are no fun to work with when measuring distance!
+
+utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0") # Opcion 1
+
+utm20S <- CRS("+init=epsg:32720") # Opcion 2
+
+farms_proj <- spTransform(farm_spdf, utm20S)
+class(farms_proj)
+farms_proj@data
+
+writeOGR(farms_proj, layer = "Farms_proj", "C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp", driver="ESRI Shapefile")
+
+#-----------------------------------------------------------------
+# Cargar datos de granjas proyectados
+#-----------------------------------------------------------------
+
+farms_proj = readOGR("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/Study_area/Farms_proj.shp")
+class(farms_proj)
+farms_proj@proj4string
+
+farms_proj <- spTransform(farms_proj, utm20S)
+
+dist <- gDistance(points_proj, farms_proj, byid = T)  # Distance between geometries. 
+# Matriz de distancias entre cada jabali (104 posit y negat)
+# y todas las granjas (460).  
+dist
+
+min_Distance <- apply(dist, 2, min)  
+min_Distance
+
+# Make a new column in the WGS84 data, set it to the distance
+# The distance vector will stay in order, so just stick it on!
+
+points_proj@data$Nearest_farm <- min_Distance  # Creates column with km to nearest farm
+head(points_proj@data)
+
+points_proj@data$Near_ID <- as.vector(apply(dist, 2, function(x) which(x == min(x))))
+points_proj
+
+# Comparison between positives and negatives
+
+df <- as.data.frame(points_proj)
+df
+
+# Next we check normality assumptions for both groups
+
+normality1 = shapiro.test(df$Nearest_farm)
+normality1
+
+# Test normality: 
+# H0 = dist. is normal
+# H1 = dist. is not normal 
+# If p > 0.05 cannot reject H0
+
+# In our case, p-value = 1.75e-11, then reject H0 and accept H1
+
+plot.new()
+
+p <- ggplot(df) +
+  stat_qq(aes(sample = Nearest_farm, colour = "red"), shape=21) +
+  theme(legend.position = "none") +
+  labs(x = "Theoretical", y = "Observed") +
+  theme(axis.title.x = element_text(size = 10, face = "bold.italic"),
+        axis.title.y = element_text(size = 10, face = "bold.italic")) +
+  theme(plot.margin = unit(c(1,1,1,1), "cm")) +
+  theme(axis.title.x = element_text(margin = margin(t = 15)),
+        axis.title.y = element_text(margin = margin(r = 15)))
+p
+
+ggsave(filename = "Figure_1.jpg", plot = p, device = "jpeg", path = NULL,
+       scale = 1, dpi = 300, limitsize = TRUE)
+
+###################################################################               
+
+# Compute summary statistics by groups:
+
+group_by(df, Resultado) %>%
+  summarise(
+    count = n(),
+    mean = mean(Nearest_farm, na.rm = TRUE),
+    sd = sd(Nearest_farm, na.rm = TRUE),
+    median = median(Nearest_farm, na.rm = TRUE)
+  )
+
+# Compute Mann-Whitney-Wilcoxon
+
+wilcoxon = wilcox.test(x = df$Nearest_farm, y = df$Resultado, alternative = "two.sided", mu = 0,
+                       paired = FALSE, conf.int = 0.95) 
+
+wilcoxon
+
+# Prevalence estimation
+
+points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Toxoplasmosis/Toxoplasmosis_distance.csv", sep = ",")
+head(points)
+
+prev <- (round((sum((points$Resultado == 1)/length(points$Jabali))*100), digits = 1))
+prev
+
+

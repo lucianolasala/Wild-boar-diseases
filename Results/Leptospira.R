@@ -230,6 +230,6 @@ wilcoxon
 points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Leptospira/Output/Leptospira_distance.csv", sep = ",")
 head(points)
 
-prev <- (round((sum((points$Resultado == 1)/length(points$Plot))*100), digits = 1))
+prev <- (round((sum((points$Resultado == 1)/length(points$Jabali))*100), digits = 1))
 prev
 

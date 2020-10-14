@@ -28,10 +28,9 @@ AD <- ggplot() +
             family = "sans") +
   theme(axis.title.x = element_blank(),
         axis.title.y = element_blank()) +
-  coord_sf(xlim = c(-65.5, -62), ylim = c(-41.25, -38.5), expand = FALSE) +
-  annotate("text", x = -64.0, y = -40.6, label = "RR = 13,4", color = "black", size = 3.5, fontface = 2) +
-  theme(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), unit = "cm"))
-
+  coord_sf(xlim = c(-65.5, -62), ylim = c(-41.25, -38.5)) +
+  annotate("text", x = -64.0, y = -40.6, label = "RR = 13,4", color = "black", size = 3.5, fontface = 2)
+  
 AD
 
 ################################################
@@ -201,7 +200,8 @@ group_by(df, Resultado) %>%
   summarise(
     count = n(),
     mean = mean(Nearest_farm, na.rm = TRUE),
-    sd = sd(Nearest_farm, na.rm = TRUE)
+    sd = sd(Nearest_farm, na.rm = TRUE),
+    median = median(Nearest_farm, na.rm = TRUE)
   )
 
 # Compute Mann-Whitney-Wilcoxon
