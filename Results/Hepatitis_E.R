@@ -80,13 +80,13 @@ library(rgdal)
 library(magrittr)
 library(readxl)
 
-Aujeszky <- read_excel("~/Analyses/Wild boar diseases/Aujeszky/Aujeszky.xlsx", sheet = "Aujeszky_distance")
+Hepatitis <- read_excel("~/Analyses/Wild boar diseases/Hepatitis E/Hepatitis E.xlsx", sheet = "Aujeszky_distance")
 
-View(Aujeszky)
+View(Hepatitis)
 
 # Load all points
 
-points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Aujeszky/Aujeszky_distance.csv", sep = ",")
+points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Hepatitis E/Hepatitis_distance.csv", sep = ",")
 
 posits <- points[with(points, Resultado == 1),]
 length(posits$Resultado)
@@ -110,6 +110,7 @@ utm20S <- CRS("+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,
 utm20S <- CRS("+init=epsg:32720") # Opcion 2
 
 points_proj <- spTransform(spdf, utm20S)
+class(points_proj)
 
 # Load farms data
 
@@ -203,7 +204,8 @@ group_by(df, Resultado) %>%
   summarise(
     count = n(),
     mean = mean(Nearest_farm, na.rm = TRUE),
-    sd = sd(Nearest_farm, na.rm = TRUE)
+    sd = sd(Nearest_farm, na.rm = TRUE),
+    mediana = median(Nearest_farm, na.rm = TRUE)
   )
 
 # Compute Mann-Whitney-Wilcoxon
@@ -215,7 +217,7 @@ wilcoxon
 
 # Prevalence estimation
 
-points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Aujeszky/Output/Aujeszky_distance.csv", sep = ",")
+points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Hepatitis E/Hepatitis_distance.csv", sep = ",")
 head(points)
 
 prev <- (round((sum((points$Resultado == 1)/length(points$Resultado))*100), digits = 1))

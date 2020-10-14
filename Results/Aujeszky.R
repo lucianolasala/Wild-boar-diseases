@@ -59,12 +59,12 @@ inset <- ggplot() +
 plot.with.inset <-
   ggdraw() +
   draw_plot(AD) +
-  draw_plot(inset, x = 0.16, y = 0.6, width = .3, height = .3)
+  draw_plot(inset, x = 0.2, y = 0.6, width = .3, height = .3)
 
 plot.with.inset
 
 ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project/Wild-boar-diseases/Maps/Aujeszky_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
-       scale = 1, dpi = 600, limitsize = TRUE)
+       scale = 1, dpi = 300, limitsize = TRUE)
 
 
 #-----------------------------------------------------------------
@@ -87,6 +87,7 @@ View(Aujeszky)
 # Load all points
 
 points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Aujeszky/Aujeszky_distance.csv", sep = ",")
+head(points)
 
 posits <- points[with(points, Resultado == 1),]
 length(posits$Resultado)
@@ -96,7 +97,8 @@ length(negats$Resultado)
 
 # Get longitude and latitude from the data.frame. Make sure that the order is in lon/lat.
 
-xy <- points[,c(3,2)]
+xy <- points[,c(3,2)]  # Extract Long and Lat
+head(xy)
 
 # Transform data.frame to SpatialPointsDataframe
 
@@ -152,15 +154,16 @@ dist <- gDistance(points_proj, farms_proj, byid = T)  # Distance between geometr
 dist
 
 min_Distance <- apply(dist, 2, min)  
-min_Distance
+min_Distance  # 106 values for minimum distance
 
-# Make a new column in the WGS84 data, set it to the distance
+# Make a new column in the WGS84 data, set it to the distance.
 # The distance vector will stay in order, so just stick it on!
 
 points_proj@data$Nearest_farm <- min_Distance  # Creates column with km to nearest farm
+head(points_proj@data)
 
 points_proj@data$Near_ID <- as.vector(apply(dist, 2, function(x) which(x == min(x))))
-points_proj
+points_proj@data$Near_ID
 
 # Comparison between positives and negatives
 
