@@ -1,8 +1,8 @@
-### Aujeszky's disease
+### Enfermedad de Aujeszky
 
 > La prevalencia de infección fue del 39,6% (*n* = 106).   
 Se detectó un agrupamiento de casos marginalmente significativo (*p* = 0,077) con un radio de 12,6 km, dentro del cual el riesgo relativo fue de 2,8. 
->> La comparación de distancias entre jabalíes positivos/negativos y la granja de cerdos más cercana fue estadísticamente significativa (*W* = 11236, *p* = 2.2e-16). La distancia entre casos (*n* = 42) y la granja más cercana fue de 4.692 m, mientras que la distancia entre no-casos (*n* = 64) y la granja más cercana fue de 6.081 m. 
+La comparación de distancias entre jabalíes positivos/negativos y la granja de cerdos más cercana fue estadísticamente significativa (*W* = 11236, *p* = 2.2e-16). La distancia entre casos (*n* = 42) y la granja más cercana fue de 4.692 m, mientras que la distancia entre no-casos (*n* = 64) y la granja más cercana fue de 6.081 m. 
 
 R scripts used to produce the image below are presented [here](./Leptospira.R).
 
