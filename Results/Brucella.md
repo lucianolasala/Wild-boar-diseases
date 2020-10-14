@@ -1,6 +1,6 @@
-### Brucella sp.
+### Brucelosis 
 
-> La prevalencia de infecci?n fue de 7,1% (*n* = 154). Se detectó un agrupamiento de casos significativo (*p* = 0,0099) dentro del cual el riesgo relativo fue de 13,4.  
+> La prevalencia de infección fue de 7,1% (*n* = 154). Se detectó un agrupamiento de casos significativo (*p* = 0,0099) dentro del cual el riesgo relativo fue de 13,4.  
 
 El código utilizado para producir el mapa se encuentra [aqui](./Brucella.R).
 
