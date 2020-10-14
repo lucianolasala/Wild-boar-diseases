@@ -1,7 +1,7 @@
 ### Tuberculosis
 
 > La prevalencia de infección fue de 37,5% (*n* = 48). No se detectaron clusters significativos.     
-
+La comparación de distancias entre jabalíes positivos/negativos y la granja de cerdos más cercana fue estadísticamente significativa (*W* = 2304, *p* < 2.2e-16). La distancia mediana entre casos (*n* = 18) y la granja más cercana fue de 5.822 m, mientras que la distancia mediana entre no-casos (*n* = 30) y la granja más cercana fue de 3.776 m. 
 
 El código utilizado para producir el mapa se encuentra [aquí](./Tuberculosis.R).
 
