@@ -28,8 +28,9 @@ AD <- ggplot() +
             family = "sans") +
   theme(axis.title.x = element_blank(),
         axis.title.y = element_blank()) +
-  coord_sf(xlim = c(-65.5, -62), ylim = c(-41.25, -38.5)) +
-  annotate("text", x = -64.0, y = -40.6, label = "RR = 13,4", color = "black", size = 3.5, fontface = 2)
+  coord_sf(xlim = c(-65.5, -62), ylim = c(-41.25, -38.5), expand = FALSE) +
+  annotate("text", x = -64.0, y = -40.6, label = "RR = 13,4", color = "black", size = 3.5, fontface = 2) +
+  theme(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), unit = "cm"))
 
 AD
 
@@ -56,12 +57,12 @@ inset <- ggplot() +
 plot.with.inset <-
   ggdraw() +
   draw_plot(AD) +
-  draw_plot(inset, x = 0.16, y = 0.6, width = .3, height = .3)
+  draw_plot(inset, x = 0.2, y = 0.6, width = .3, height = .3)
 
 plot.with.inset
 
 ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project/Wild-boar-diseases/Maps/Brucella_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
-       scale = 1, dpi = 600, limitsize = TRUE)  
+       scale = 1, dpi = 300, limitsize = TRUE)  
 
 
 #-----------------------------------------------------------------

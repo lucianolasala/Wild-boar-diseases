@@ -53,10 +53,15 @@ inset <- ggplot() +
 plot.with.inset <-
   ggdraw() +
   draw_plot(AD) +
-  draw_plot(inset, x = 0.16, y = 0.6, width = .3, height = .3)
+  draw_plot(inset, x = 0.2, y = 0.6, width = .3, height = .3)
 
 plot.with.inset
 
 ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project/Wild-boar-diseases/Maps/Tuberculosis_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
-       scale = 1, dpi = 600, limitsize = TRUE)  
+       scale = 1, dpi = 300, limitsize = TRUE)  
+
+#-----------------------------------------------------------------
+# Analisis de distancia
+#-----------------------------------------------------------------
+
 
