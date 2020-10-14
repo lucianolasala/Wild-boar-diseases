@@ -80,13 +80,13 @@ library(rgdal)
 library(magrittr)
 library(readxl)
 
-Leptospira <- read_excel("~/Analyses/Wild boar diseases/Leptospira/Leptospira.xlsx", sheet = "Leptospira_distance")
+Aujeszky <- read_excel("~/Analyses/Wild boar diseases/Aujeszky/Aujeszky.xlsx", sheet = "Aujeszky_distance")
 
-View(Leptospira)
+View(Aujeszky)
 
 # Load all points
 
-points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Aujeszky/Output/Aujeszky_distance.csv", sep = ",")
+points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Aujeszky/Aujeszky_distance.csv", sep = ",")
 
 posits <- points[with(points, Resultado == 1),]
 length(posits$Resultado)
@@ -177,7 +177,7 @@ normality1
 # H1 = dist. is not normal 
 # If p > 0.05 cannot reject H0
 
-# In our case, p-value = 8.355e-07, then reject H0 and accept H1
+# In our case, p-value = 2.699e-09, then reject H0 and accept H1
 
 plot.new()
 
@@ -198,8 +198,6 @@ ggsave(filename = "Figure_1.jpg", plot = p, device = "jpeg", path = NULL,
 ###################################################################               
 
 # Compute summary statistics by groups:
-
-library(dplyr)
 
 group_by(df, Resultado) %>%
   summarise(
