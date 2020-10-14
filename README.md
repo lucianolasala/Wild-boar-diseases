@@ -31,6 +31,6 @@
     - [Resultados generales](./Results/Paratuberculosis.md)
     - [Scripts](./Results/Paratuberculosis.R)
 - Toxoplasmosis
-    - [Resultados generales](./Results/Brucella.md)
-    - [Scripts](./Results/Aujeszky.R)
+    - [Resultados generales](./Results/Toxoplasmosis.md)
+    - [Scripts](./Results/Toxoplasmosis.R)
 
