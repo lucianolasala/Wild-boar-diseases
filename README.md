@@ -19,8 +19,8 @@
     - [Resultados generales](./Results/Aujeszky.md)
     - [Scripts](./Results/Aujeszky.R) 
 - Hepatitis E
-    - [Resultados generales](./Results/Aujeszky.md)
-    - [Scripts](./Results/Aujeszky.R)
+    - [Resultados generales](./Results/Hepatitis_E.md)
+    - [Scripts](./Results/Hepatitis_E.R)
 - Tuberculosis
     - [Resultados generales](./Results/Tuberculosis.md)
     - [Scripts](./Results/Tuberculosis.R)
