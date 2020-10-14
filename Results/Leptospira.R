@@ -78,10 +78,6 @@ library(rgdal)
 library(magrittr)
 library(readxl)
 
-Leptospira <- read_excel("~/Analyses/Wild boar diseases/Leptospira/Leptospira.xlsx", sheet = "Leptospira_distance")
-
-View(Leptospira)
-
 # Cargar puntos
 
 points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Leptospira/Output/Leptospira_distance.csv", sep = ",")
@@ -215,8 +211,8 @@ group_by(df, Resultado) %>%
   summarise(
     count = n(),
     mean = mean(Nearest_farm, na.rm = TRUE),
-    sd = sd(Nearest_farm, na.rm = TRUE)
-  )
+    sd = sd(Nearest_farm, na.rm = TRUE),
+    median = median(Nearest_farm, na.rm = TRUE))
 
 # Compute Mann-Whitney-Wilcoxon
 

@@ -1,6 +1,8 @@
 ### Leptospirosis
 
-> La prevalencia de infección fue de 20,2% (*n* = 104). Se detectó un agrupamiento de casos significativo (*p* = 0,017) dentro del cual el riesgo relativo fue de 5,4. 
+> La prevalencia de infección fue de 20,2% (*n* = 104). Se detectó un agrupamiento de casos significativo (*p* = 0,017) con un radio de 24 km dentro del cual el riesgo relativo fue de 5,4. 
+
+La comparación de distancias entre jabalíes positivos/negativos y la granja de cerdos más cercana fue estadísticamente significativa (*W* = 10816, *p* < 2.2e-16). La distancia mediana entre casos (*n* = 21) y la granja más cercana fue de 3.299 m, mientras que la distancia entre no-casos (*n* = 83) y la granja más cercana fue de 4.276 m. 
 
 El código utilizado para producir el mapa se presenta [aquí](./Leptospira.R).
 
