@@ -33,6 +33,6 @@
 - Toxoplasmosis
     - [Resultados generales](./Results/Toxoplasmosis.md)
     - [Scripts](./Results/Toxoplasmosis.R)
-- Trichinelosis
+- Triquinelosis
     - [Resultados generales](./Results/Triquinelosis.md)
     - [Scripts](./Results/Triquinelosis.R)
