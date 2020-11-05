@@ -60,7 +60,7 @@ plot.with.inset <-
 
 plot.with.inset
 
-ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project/Wild-boar-diseases/Maps/Aujeszky_clusters.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
+ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project/Wild-boar-diseases/Maps/Triquinelosis.jpg", plot = plot.with.inset, device = "jpeg", path = NULL,
        scale = 1, dpi = 300, limitsize = TRUE)
 
 
@@ -77,13 +77,13 @@ library(rgdal)
 library(magrittr)
 library(readxl)
 
-Aujeszky <- read_excel("~/Analyses/Wild boar diseases/Aujeszky/Aujeszky.xlsx", sheet = "Aujeszky_distance")
+Triquinelosis <- read_excel("~/Analyses/Wild boar diseases/Triquinelosis/Trichinella.xlsx", sheet = "Trichinella_distance")
 
-View(Aujeszky)
+View(Triquinelosis)
 
 # Load all points
 
-points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Aujeszky/Aujeszky_distance.csv", sep = ",")
+points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Triquinelosis/Trichinella_distance.csv", sep = ",")
 head(points)
 
 posits <- points[with(points, Resultado == 1),]
