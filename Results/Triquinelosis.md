@@ -7,6 +7,6 @@ La comparación de distancias entre jabalíes positivos/negativos y la granja de
 R scripts used to produce the image below are presented [here](./Triquinelosis.R).
 
 
-<img src="https://github.com/lucianolasala/Wild-boar-diseases/issues/16#issue-737138945.jpg" width="400" img align="center">
+<img src="https://user-images.githubusercontent.com/20196847/98276855-5a352880-1f75-11eb-86c9-c6113f1ff131.jpg" width="400" img align="center">
 
 >Legend for figure: Distribution of cases of Leptospira sp. in wild boar from southwest Buenos Aires province. Circles represent locations with one (white), two (green) and frour (red) cases.
