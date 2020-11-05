@@ -10,19 +10,17 @@ studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "Río Negro" & NAME
 
 studyarea1 <- cbind(studyarea, st_coordinates(st_centroid(studyarea)))
 
+
 occs <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Triquinelosis/Trichinella.csv", sep = ",", dec = ".") %>%
   st_as_sf(coords = c("Long", "Lat"), crs = 4326) %>%
   st_join(arg)
 
 occs1 <- st_as_sf(occs, coords = c("Long","Lat"), crs = 4326)
 
-clusters <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Aujeszky/Output/Aujeszky.col_unique.shp")
-
 AD <- ggplot() +
   geom_sf(data = studyarea, color = "black", alpha = 1, aes(fill = NAME_2), show.legend = FALSE) +
-  geom_sf(data = clusters, alpha = 1, color = "red", size = 1) +
   geom_sf(data = occs, alpha = 1, pch = 21, size = 3, show.legend = FALSE, aes(fill = factor(Number))) +
-  scale_fill_manual(values = c("#FFFFFF","#2ECC71","#F73505","#F5CD60","#ABB2B9","#F0B27A")) +
+  scale_fill_manual(values = c("#FFFFFF","#F5CD60","#ABB2B9","#F0B27A")) +
   annotation_scale(width_hint = 0.2, height = unit(0.2, "cm"),
                    pad_x = unit(0.25, "cm"),
                    pad_y = unit(0.3, "cm")) +
@@ -30,8 +28,7 @@ AD <- ggplot() +
             family = "sans") +
   theme(axis.title.x = element_blank(),
         axis.title.y = element_blank()) +
-  coord_sf(xlim = c(-65.5, -62), ylim = c(-41.25, -38.5)) +
-  annotate("text", x = -64.0, y = -40.6, label = "RR = 2,8", color = "black", size = 3.5, fontface = 2)
+  coord_sf(xlim = c(-65.5, -62), ylim = c(-41.25, -38.5))
 
 AD
 
