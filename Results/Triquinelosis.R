@@ -85,21 +85,34 @@ View(Triquinelosis)
 
 points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Triquinelosis/Trichinella_distance.csv", sep = ",")
 head(points)
+length(points$Jabali)
+
+plot(points$Long, points$Lat)
+
+points_1 <- points[!(points$Jabali %in% c(225)), ] 
 
 posits <- points[with(points, Resultado == 1),]
+posits
 length(posits$Resultado)
+plot(posits$Long, posits$Lat)
+
+which(posits$Long < -65)  # Jabali 225 queda fuera del area de estudio, se elimina de los analisis
+
 
 negats <- points[with(points, Resultado == 0),]
 length(negats$Resultado)
 
 # Get longitude and latitude from the data.frame. Make sure that the order is in lon/lat.
 
-xy <- points[,c(3,2)]  # Extract Long and Lat
-head(xy)
+xy_1 <- points[!(points$Jabali %in% c(225)), ]  # Elimino jabali 225
+length(xy_1$Jabali)
+
+xy_1 <- xy_1[ , c(3,2)]  # Selecciono long y lat
+
 
 # Transform data.frame to SpatialPointsDataframe
 
-spdf <- SpatialPointsDataFrame(coords = xy, data = points, proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+spdf <- SpatialPointsDataFrame(coords = xy_1, data = points_1, proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 spdf@proj4string
 
 # Define a projection - Decimal degrees are no fun to work with when measuring distance
@@ -151,7 +164,8 @@ dist <- gDistance(points_proj, farms_proj, byid = T)  # Distance between geometr
 dist
 
 min_Distance <- apply(dist, 2, min)  
-min_Distance  # 106 values for minimum distance
+min_Distance  # 234 values for minimum distance
+length(min_Distance)
 
 # Make a new column in the WGS84 data, set it to the distance.
 # The distance vector will stay in order, so just stick it on!
@@ -179,7 +193,7 @@ normality1
 # H1 = dist. is not normal 
 # If p > 0.05 cannot reject H0
 
-# In our case, p-value = 2.699e-09, then reject H0 and accept H1
+# In our case, p-value < 2.2e-16, then reject H0 and accept H1
 
 plot.new()
 
