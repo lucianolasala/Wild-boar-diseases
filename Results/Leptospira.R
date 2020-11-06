@@ -71,13 +71,6 @@ ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project
 
 rm(list=ls(all=TRUE))
 
-install.packages("rgeos","rgdal","magrittr","readxl")
-
-library(rgeos)
-library(rgdal)
-library(magrittr)
-library(readxl)
-
 # Cargar puntos
 
 points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Leptospira/Output/Leptospira_distance.csv", sep = ",")

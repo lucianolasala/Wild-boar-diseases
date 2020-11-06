@@ -66,7 +66,7 @@ ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project
 
 rm(list=ls(all=TRUE))
 
-# Load all points
+# Cargar puntos
 
 points <- read.csv("C:/Users/User/Documents/Analyses/Wild boar diseases/Tuberculosis/TB_distance.csv", sep = ",")
 head(points)
@@ -77,12 +77,13 @@ length(posits$Resultado)
 negats <- points[with(points, Resultado == 0),]
 length(negats$Resultado)
 
-# Get longitude and latitude from the data.frame. Make sure that the order is in lon/lat.
+# Extraer longitud/latitud del data.frame (en ese orden) 
 
 xy <- points[,c(3,2)]  # Extract Long and Lat
 head(xy)
 
-# Transform data.frame to SpatialPointsDataframe
+# Transformar el data.frame a SpatialPointsDataframe (sp).
+# Class for spatial attributes that have spatial point locations
 
 spdf <- SpatialPointsDataFrame(coords = xy, data = points, proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 spdf@proj4string
@@ -95,7 +96,7 @@ utm20S <- CRS("+init=epsg:32720") # Opcion 2
 
 points_proj <- spTransform(spdf, utm20S)
 
-# Load farms data
+# Cargar granjas y area de estudio
 
 farms <- readOGR("C:/Users/User/Documents/Analyses/Wild boar ENM/Spatial data/Capas SENASA/Farm distribution.shp")
 farms@coords
