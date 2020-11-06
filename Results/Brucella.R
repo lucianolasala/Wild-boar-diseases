@@ -70,13 +70,6 @@ ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project
 
 rm(list=ls(all=TRUE))
 
-install.packages("rgeos","rgdal","magrittr","readxl")
-
-library(rgeos)
-library(rgdal)
-library(magrittr)
-library(readxl)
-
 Brucella <- read_excel("~/Analyses/Wild boar diseases/Brucelosis/Brucella.xlsx", sheet = "Brucella_distance")
 
 View(Brucella)

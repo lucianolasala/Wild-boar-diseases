@@ -73,13 +73,6 @@ ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project
 
 rm(list=ls(all=TRUE))
 
-install.packages("rgeos","rgdal","magrittr","readxl")
-
-library(rgeos)
-library(rgdal)
-library(magrittr)
-library(readxl)
-
 Hepatitis <- read_excel("~/Analyses/Wild boar diseases/Hepatitis E/Hepatitis E.xlsx", sheet = "Aujeszky_distance")
 
 View(Hepatitis)

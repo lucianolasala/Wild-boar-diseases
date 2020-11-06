@@ -68,15 +68,6 @@ ggsave(filename = "C:/Users/User/Documents/Analyses/Wild boar diseases/R_project
 # Analisis de distancias
 #-----------------------------------------------------------------
 
-rm(list=ls(all=TRUE))
-
-install.packages("rgeos","rgdal","magrittr","readxl")
-
-library(rgeos)
-library(rgdal)
-library(magrittr)
-library(readxl)
-
 Triquinelosis <- read_excel("~/Analyses/Wild boar diseases/Triquinelosis/Trichinella.xlsx", sheet = "Trichinella_distance")
 
 View(Triquinelosis)
