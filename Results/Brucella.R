@@ -4,7 +4,7 @@ rm(list=ls(all=TRUE))
 
 arg <- st_read("C:/Users/User/Documents/Analyses/Wild boar diseases/Shapefiles/ARG_adm/ARG_adm2.shp")
 
-studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "RÃ­o Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
+studyarea = arg %>% filter(NAME_2 == "Patagones" | NAME_1 == "Río Negro" & NAME_2 == "Adolfo Alsina" | NAME_2 == "Conesa")
 
 studyarea1 <- cbind(studyarea, st_coordinates(st_centroid(studyarea)))
 
