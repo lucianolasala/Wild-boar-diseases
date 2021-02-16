@@ -4,7 +4,7 @@
 
 ### Contenidos
 
-#### 1. Introducciónes
+#### 1. Introducción
 
 #### 2. Enfoque metodológico  
 - [Paquetes de R](./R-packages/R-packages.R)    
