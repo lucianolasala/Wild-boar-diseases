@@ -4,12 +4,12 @@
 
 ### Contenidos
 
-#### 1. Introducción
+#### 1. Introducciónes
 
 #### 2. Enfoque metodológico  
 - [Paquetes de R](./R-packages/R-packages.R)    
 - [Métodos estadísticos](./Statistical_methods/Methods.md)    
-bbbb
+
 #### 3. Scripts de programación y resultados
 - Leptospirosis  
     - [Resultados generales](./Results/Leptospira.md)  
