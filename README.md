@@ -4,7 +4,7 @@
 
 ### Contenidos
 
-#### 1. IntroducciónV
+#### 1. IntroducciónVERGA
 
 #### 2. Enfoque metodológico  
 - [Paquetes de R](./R-packages/R-packages.R)    
